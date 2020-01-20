@@ -86,7 +86,7 @@ router.post('/insert', (req, res, next) => {
                         $addToSet: {
                             DOCS: {
                                 name: DOCNAME_,
-                                dataInsert: Date()
+                                dataInsert: new Date()
                             }
                         }
                     }
@@ -110,7 +110,7 @@ router.post('/insert', (req, res, next) => {
                 visitTot: 1,
                 DOCS: [{
                     name: DOCNAME_,
-                    dataInsert: new Date("<YYYY-mm-ddTHH:MM:ss>") 
+                    dataInsert: (new Date().toString('yyyy-MM-dd')).substring(0, 24)
                 }]
 
             });
