@@ -86,7 +86,7 @@ router.post('/insert', (req, res, next) => {
                         $addToSet: {
                             DOCS: {
                                 name: DOCNAME_,
-                                dataInsert: new Date().toString('yyyy-MM-dd')
+                                dataInsert: new Date()
                             }
                         }
                     }

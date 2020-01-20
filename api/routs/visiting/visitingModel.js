@@ -8,7 +8,7 @@ const visitingSchema = mongoose.Schema({
     visitTot: Number,
     DOCS: [{
       name: String,
-      dataInsert: String
+      dataInsert: Date
     }]
     
 })
