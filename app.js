@@ -1,6 +1,7 @@
 // This file is for handling request
 const express = require('express')
 const app = express();
+const cors = require("cors")
 
 const bodyParser = require('body-parser')
 
@@ -12,6 +13,7 @@ const tavola = require('./api/routs/tavola/tavola')
 const visiting = require('./api/routs/visiting/visiting')
 const menu = require('./api/routs/menu/menu')
 const prova = require('./api/routs/prova')
+const email = require('./api/routs/email/email')
 
 
 const mongoose = require('mongoose')
@@ -28,6 +30,9 @@ mongoose.connect('mongodb+srv://sushi:sushi@clustersushi-erhzq.mongodb.net/sushi
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
+
+// security
+app.use(cors({origin: "*"}))
 
 app.use((req,res,next)=>{
     res.header('Access-Control-Allow-Origin', '*')
@@ -48,6 +53,7 @@ app.use('/Tavola',tavola)
 app.use('/Visiting',visiting)
 app.use('/menu',menu)
 app.use('/prova',prova)
+app.use('/email', email)
 
 
 // if the user requires a path that doesnt exsists, i throw an error
