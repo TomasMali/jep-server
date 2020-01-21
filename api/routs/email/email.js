@@ -28,8 +28,8 @@ router.post('/send', (req, res, next) => {
         port: 587,
         secure: false,
         auth: {
-            user: "tomasmali08@gmail.com",
-            pass: "..Tomi92"
+            user: cre.user,
+            pass: cre.pass
         },
         tls: {
             rejectUnauthorized: false
