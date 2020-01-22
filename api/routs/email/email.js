@@ -38,7 +38,7 @@ router.post('/send', (req, res, next) => {
 
     var mailOptions = {
         from: email,
-        to: 'tomasmali08@gmail.com',
+        to: email,
         subject: '##### MODULO JEXP #####',
         text: emailtext
     };
