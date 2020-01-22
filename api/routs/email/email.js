@@ -28,8 +28,8 @@ router.post('/send', (req, res, next) => {
         port: 587,
         secure: false,
         auth: {
-            user: "tomasmali08@gmail.com",
-            pass: "..Tomi92"
+            user: cre.user,
+            pass: cre.pass
         },
         tls: {
             rejectUnauthorized: false
@@ -46,7 +46,7 @@ router.post('/send', (req, res, next) => {
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log("Errore dal server: \n" + (error));
-            res.send("Errore dal server: \n" + (error))
+            res.send(false)
         } else {
             console.log('Email sent: ' + info.response);
             res.send(true)
