@@ -38,7 +38,7 @@ router.post('/send', (req, res, next) => {
 
     var mailOptions = {
         from: email,
-        to: email,
+        to: cre.user,
         subject: '##### MODULO JEXP #####',
         text: emailtext
     };
