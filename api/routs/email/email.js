@@ -46,7 +46,7 @@ router.post('/send', (req, res, next) => {
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             console.log("Errore dal server: \n" + (error));
-            res.send(false)
+            res.send("Errore dal server: \n" + (error))
         } else {
             console.log('Email sent: ' + info.response);
             res.send(true)
