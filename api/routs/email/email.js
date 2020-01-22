@@ -19,7 +19,7 @@ const cre = require("../email/cre")
  */
 router.post('/send', (req, res, next) => {
     const name = req.body.name;
-    const email_ = req.body.email;
+    const email = req.body.email;
     const emailtext = req.body.emailtext
 
     var transporter = nodemailer.createTransport({
@@ -37,9 +37,9 @@ router.post('/send', (req, res, next) => {
     });
 
     var mailOptions = {
-        from: _,
-        to: cre.user,
-        subject: '##### MODULO JEXP ##### \n Mandato da: ' + email_,
+        from: email,
+        to: "tomasmali08@gmail.com",
+        subject: '##### MODULO JEXP ##### \n Mandato da: ',
         text: emailtext
     };
 
@@ -52,7 +52,7 @@ router.post('/send', (req, res, next) => {
             res.send(true)
         }
     });
-    console.log("Nome: " + name + "\n" + "Email: " + email_ + "\n" + "Testo della mail: " + emailtext + "\n")
+    console.log("Nome: " + name + "\n" + "Email: " + email + "\n" + "Testo della mail: " + emailtext + "\n")
 })
 
 
