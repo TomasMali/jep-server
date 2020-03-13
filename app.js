@@ -15,10 +15,12 @@ const menu = require('./api/routs/menu/menu')
 const prova = require('./api/routs/prova')
 const email = require('./api/routs/email/email')
 
+const board = require('./api/routs/board/board')
+
 
 const mongoose = require('mongoose')
 
-const db_jexp = "mongodb+srv://visiting:visiting@visiting-g3tpj.mongodb.net/test?retryWrites=true&w=majority"
+const db_jexp = "mongodb+srv://visiting:visiting@visiting-g3tpj.mongodb.net/board?retryWrites=true&w=majority"
 const db_sushi = "mongodb+srv://sushi:sushi@clustersushi-erhzq.mongodb.net/sushi?retryWrites=true&w=majority"
 
 mongoose.connect(db_jexp,
@@ -56,6 +58,8 @@ app.use('/Visiting',visiting)
 app.use('/menu',menu)
 app.use('/prova',prova)
 app.use('/email', email)
+
+app.use('/board', board)
 
 
 // if the user requires a path that doesnt exsists, i throw an error
